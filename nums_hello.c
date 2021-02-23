@@ -25,7 +25,9 @@ void my_putc(char ch){
 	for (i=0; i<sizeof(symbolDict); i++){
 		if (ch==symbolDict[i].symbol){
 			PORTA = symbolDict[i].code;
+
 			break;
+
 		}
 		else
 			PORTA = 0b00111111;
@@ -37,5 +39,6 @@ void main() {
 	
 //	char ch = "h";	
 	 my_putc('P');
+
 
 }

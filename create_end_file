@@ -1,0 +1,5 @@
+#!/bin/bash
+//myprog.c
+avr-gcc -mmcu=atmega16 -Os $1.c -o $1.o
+avr-objcopy -O ihex $1.o $1.hex
+avrdude -p atmega16 -P /dev/ttyACM0 -c avrispv2 -U flash:w:$1.hex
